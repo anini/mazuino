@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>MAZUINO | Maze Solving Robot, and more!</title>
+  <link rel="canonical" href="https://mazuino.anini.me/" />
+
+  <meta name="description" content="MAZUINO is an Arduino-based autonomous multi-task robot that solves any line maze and generates the shortest path after the first run." />
+  <meta name="author" content="Mohammad Anini" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b132b" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAZUINO | Maze Solving Robot, and more!" />
+  <meta property="og:title" content="MAZUINO | Maze Solving Robot, and more!" />
+  <meta property="og:description" content="MAZUINO is an Arduino-based autonomous multi-task robot that solves any line maze and generates the shortest path after the first run." />
+  <meta property="og:url" content="https://mazuino.anini.me/" />
+  <meta property="og:image" content="https://mazuino.anini.me/assets/img/MAZUINO.jpg" />
+  <meta property="og:image:alt" content="MAZUINO robot on a maze track" />
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:locale" content="en_US" />
+
+  <!-- X (Twitter) Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MAZUINO | Maze Solving Robot, and more!" />
+  <meta name="twitter:description" content="MAZUINO is an Arduino-based autonomous multi-task robot that solves any line maze and generates the shortest path after the first run." />
+  <meta name="twitter:image" content="https://mazuino.anini.me/assets/img/MAZUINO.jpg" />
+  <meta name="twitter:site" content="@mr_anini" />
+  <meta name="twitter:creator" content="@mr_anini" />
+
+  <link rel="image_src" href="https://mazuino.anini.me/assets/img/MAZUINO.jpg">
+  <meta name="thumbnail" content="https://mazuino.anini.me/assets/img/MAZUINO.jpg">
+
+  <!-- Favicons -->
+  <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#0b132b">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/site.webmanifest">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Geo&family=Rubik+Maze&family=Share+Tech&display=swap" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css?v=1.0" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://mazuino.anini.me/#about",
+    "name": "MAZUINO",
+    "description": "MAZUINO is an Arduino-based autonomous multi-task robot that solves any line maze and generates the shortest path after the first run.",
+    "category": "Robotics",
+    "brand": { "@type": "Brand", "name": "MAZUINO" },
+    "image": "https://mazuino.anini.me/assets/img/MAZUINO.jpg",
+    "url": "https://mazuino.anini.me/",
+    "creator": {
+      "@type": "Person",
+      "name": "Mohammad Anini",
+      "alternateName": "محمد عنيني",
+      "sameAs": [
+        "https://www.linkedin.com/in/anini",
+        "https://x.com/mr_anini",
+        "https://github.com/anini",
+        "https://instagram.com/mr_anini"
+      ]
+    },
+    "dateCreated": "2012",
+    "isAccessibleForFree": true,
+    "subjectOf": [
+      {
+        "@type": "VideoObject",
+        "name": "MAZUINO Solving a Maze",
+        "url": "https://www.youtube.com/watch?v=tbE9vr4I8aQ",
+        "embedUrl": "https://www.youtube.com/embed/tbE9vr4I8aQ",
+        "thumbnailUrl": "https://img.youtube.com/vi/tbE9vr4I8aQ/hqdefault.jpg"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="section-container">
+      <h1>MAZUINO</h1>
+      <h2>Maze Solving Robot, and more!</h2>
+    </div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#about" class="scrollto"><i class="ai ai-intro"></i> About</a></li>
+        <li><a href="#components" class="scrollto"><i class="ai ai-components"></i> Components</a></li>
+        <li><a href="#code" class="scrollto"><i class="ai ai-code"></i> Code</a></li>
+        <li><a href="#videos" class="scrollto"><i class="ai ai-video"></i> Videos</a></li>
+      </ul>
+    </nav>
+  </section><!-- End Hero -->
+
+  <div class="h-divider" id="hero-divider"><div class="shadow"></div></div>
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="section-container">
+        <div class="row">
+          <div class="col-4">
+            <img src="assets/img/MAZUINO 2.png" class="section-img" alt="MAZUINO">
+          </div>
+          <div class="col-8">
+            <div class="section-title">
+              <h2><i class="ai ai-about"></i>About</h2>
+            </div>
+            <p>
+              <b>MAZUINO</b> is an autonomous robot that solves line mazes using an <a target="_blank" rel="nofollow" href="https://www.arduino.cc/"><span data-hover="Arduino microcontroller">Arduino microcontroller</span></a>. The robot follows the black line through the maze –without any prior knowledge– until it finds a complete route from start to finish.
+            </p>
+            <p>
+              While the maze can include multiple dead ends, the robot's first run may involve a few wrong turns. During that run, however, it learns and records the shortest path. On the second run, <b>MAZUINO</b> completes the maze without entering any dead end.<br>It uses the Left-Hand Rule (aka the wall-follower method) and a custom step-processing algorithm that converts the recorded moves into a new, dead-end-free path.
+            </p>
+            <p>
+              <b>MAZUINO</b> is not only a maze-solving robot; it also functions as a line follower by default, and it can play music, dance and perform a synchronized light show.
+            </p>
+            <p>
+              Built and developed by <b><a target="_blank" href="https://anini.me"><span data-hover="Mohammad Anini">Mohammad Anini</span></a></b> as a graduation project in 2012. It is worth mentioning that <b>MAZUINO</b> was the first documented maze-solving robot in the Middle East.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <div class="h-divider"><div class="shadow section-bg"></div></div>
+
+    <!-- ======= Components Section ======= -->
+    <section id="components" class="section-bg">
+      <div class="section-container">
+        <div class="row">
+          <div class="col-7">
+            <div class="section-title">
+              <h2><i class="ai ai-components"></i>Components</h2>
+            </div>
+            <p>
+              <b>MAZUINO</b> was built using the following electronic components:<br>
+              <span class="component">Arduino Uno - R3</span><span class="component">QTR-8A Reflectance Sensor Array</span><span class="component">L293D Motor Driver</span><span class="component">Micro Metal Gearmotor</span><span class="component">LEDs</span><span class="component">Resistors</span><span class="component">Piezo Buzzer</span><span class="component">Linear Potentiometer</span><span class="component">Rechargeable Battery 9V - 350mAh</span><span class="component">Voltage Regulator - 5V</span><span class="component">Toggle Switch</span><span class="component">Stripboard</span><span class="component">16 Pin DIL IC Socket</span><span class="component">Wires</span><span class="component">JST 2-Pin to DC Jack Converter</span><span class="component">9V Battery Clip</span><span class="component">Breakaway and Extended Male Headers</span>
+              <br><br>
+              For full documentation of MAZUINO, please contact <a target="_blank" href="https://anini.me"><span data-hover="Mohammad Anini">Mohammad Anini</span></a>.
+            </p>
+          </div>
+          <div class="col-5">
+            <img src="assets/img/MAZUINO 4.png" class="section-img" alt="MAZUINO">
+          </div>
+        </div>
+      </div>
+    </section><!-- End Code Section -->
+
+    <div class="h-divider"><div class="shadow"></div></div>
+
+    <!-- ======= Code Section ======= -->
+    <section id="code">
+      <div class="section-container">
+        <div class="row">
+          <div class="col-3">
+            <img src="assets/img/MAZUINO 3.png" class="section-img" alt="MAZUINO">
+          </div>
+          <div class="col-9">
+            <div class="section-title">
+              <h2><i class="ai ai-code"></i>Code</h2>
+            </div>
+            <p>
+              Arduino “sketches” (<code>.ino</code> files) are written in what's commonly called the Arduino language, which is essentially C/C++ with a lightweight framework and the Arduino core libraries. Sketches use the familiar <code>setup()</code> and <code>loop()</code> structure and are compiled as C++.
+            </p>
+            <p>
+              Programming Arduino uses the <b>Arduino Integrated Development Environment (IDE)</b> to write, edit, and upload code to the board. It also includes a Serial Monitor for quick debugging.
+            </p>
+            <p>
+              All <b>MAZUINO</b> sketches are <b>open source</b> and available in its <a target="_blank" rel="nofollow" href="https://github.com/anini/mazuino"><span data-hover="GitHub repository">GitHub repository</span></a>. The repository also includes the code behind this website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Code Section -->
+
+    <div class="h-divider"><div class="shadow section-bg"></div></div>
+
+    <!-- ======= Videos Section ======= -->
+    <section id="videos" class="section-bg">
+      <div class="section-container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title">
+              <h2><i class="ai ai-video"></i>Videos</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div id="YT1" class="YT">
+              <iframe
+              width="100%"
+              height="250"
+              src="https://www.youtube-nocookie.com/embed/W9OeecF7qzE"
+              title="MAZUINO Following a Simple Line"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy">
+              </iframe>
+              <span class="YT-title">MAZUINO Following a Simple Line (<i>15 May 2012</i>)</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div id="YT2" class="YT">
+              <iframe
+              width="100%"
+              height="250"
+              src="https://www.youtube-nocookie.com/embed/tEsTKi6oeP8"
+              title="MAZUINO Following a Complex Line"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy">
+              </iframe>
+              <span class="YT-title">MAZUINO Following a Simple Line (<i>15 May 2012</i>)</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div id="YT3" class="YT">
+              <iframe
+              width="100%"
+              height="250"
+              src="https://www.youtube-nocookie.com/embed/tbE9vr4I8aQ"
+              title="MAZUINO Following a Simple Line"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy">
+              </iframe>
+              <span class="YT-title">MAZUINO Solving a Maze (<i>21 May 2012</i>)</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div id="YT4" class="YT">
+              <iframe
+              width="100%"
+              height="250"
+              src="https://www.youtube-nocookie.com/embed/rjOtPrksON8"
+              title="MAZUINO Following a Complex Line"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy">
+              </iframe>
+              <span class="YT-title">MAZUINO Playing Music (<i>23 May 2012</i>)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Videos Section -->
+
+    <div class="h-divider"><div class="shadow"></div></div>
+
+    <!-- ======= Footer Section ======= -->
+    <footer>
+      <span>Get in touch with Mohammad Anini:</span><br id="social-br">
+      <a target="_blank" href="https://anini.me" ><i class="ai ai-site"></i></a>
+      <a target="_blank" rel="nofollow" href="https://github.com/anini" ><i class="ai ai-github"></i></a>
+      <a target="_blank" rel="nofollow" href="https://stackoverflow.com/users/1711813/mohammad-anini"><i class="ai ai-stack-overflow"></i></a>
+      <a target="_blank" rel="nofollow" href="https://linkedin.com/in/anini"><i class="ai ai-linkedin"></i></a>
+      <a target="_blank" rel="nofollow" href="https://x.com/mr_anini"><i class="ai ai-twitter"></i></a>
+      <a target="_blank" rel="nofollow" href="https://instagram.com/mr_anini"><i class="ai ai-instagram"></i></a>   
+    </footer><!-- End Footer Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#hero" class="back-to-top scrollto"><i class="ai ai-up"></i></a>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,515 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+*,
+*::before,
+*::after { box-sizing: border-box; }
+body {
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #272829;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+h1 {
+  font-family: "Rubik Maze", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+h2 {
+  font-family: "Geo", sans-serif;
+  font-size: 55px;
+  margin: 5px;
+}
+a {
+  color: #149ddd;
+  text-decoration: none;
+  overflow:hidden;
+  position:relative;
+  display:inline-table;
+}
+a:hover, a:focus {
+  color: #37b3ed;
+  text-decoration: none;
+}
+a span {
+  position:relative;
+  display:inline-block;
+  -webkit-transition:-webkit-transform .3s;
+  -moz-transition:
+  -moz-transform .3s;
+  transition:transform .3s;
+}
+a span::before {
+  position:absolute;
+  top:100%;
+  content:attr(data-hover);
+  -webkit-transform:translate3d(0,0,0);
+  -ms-transform:translate3d(0,0,0);
+  -o-transform:translate3d(0,0,0);
+  -moz-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+}
+a:focus span, a:hover span {
+  -webkit-transform:translateY(-100%);
+  -ms-transform:translateY(-100%);
+  -o-transform:translateY(-100%);
+  -moz-transform:translateY(-100%);
+  transform:translateY(-100%);
+}
+a:hover i:before, a:focus i:before {
+  filter: brightness(0.8);
+}
+p {
+  text-align: justify;
+  margin: 10px 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+footer {
+  padding: 30px;
+  text-align: center;
+  line-height: 26px;
+}
+code {
+  font-family: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  font-size: 15px;
+  background-color: #333;
+  color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+}
+.component {
+  padding: 2px 6px;
+  margin-right: 10px;
+  margin-top: 7px;
+  background: #ffe0e5;
+  font-family: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*--------------------------------------------------------------
+# Back to Top
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  transition: 0.4s;
+  font-size: 35px;
+  line-height: 45px;
+}
+.back-to-top:hover {
+  filter: brightness(.9);
+}
+.back-to-top.active{
+  visibility: visible;
+  opacity: 1;
+  filter:brightness(1);
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+nav {
+  margin-top: auto;
+}
+nav * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav > ul > li {
+  position: relative;
+  white-space: nowrap;
+  display: inline-block;
+  margin: 0 7px;
+}
+nav a {
+  display: flex;
+  align-items: center;
+  color: #c61c38;
+  padding: 4px 15px;
+  margin-bottom: 20px;
+  transition: .3s;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Geo", sans-serif;
+  background: rgba(100, 100, 100, 0.3);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+}
+nav a i {
+  font-size: 28px;
+  margin-right: 8px;
+  line-height: 28px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  border-bottom: 3px solid #c61c38;
+}
+nav a:focus, nav a:hover, nav li:hover>a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+}
+section .section-container {
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  min-width: 300px;
+}
+.section-bg {
+  background: rgba(100, 100, 100, 0.1);
+}
+.section-title {
+  padding-bottom: 20px;
+  text-align: center;
+}
+.section-title h2 {
+  position: relative;
+  color: #c61c38;
+  line-height: 1;
+  margin-top: -15px;
+}
+.section-title h2 i {
+  margin-right: 5px;
+  padding-bottom: 6px;
+  font-size: 45px;
+  border-bottom: 5px solid #c61c38;
+}
+.section-img {
+  margin-top: 82px;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;     /* legacy */
+  height: 100svh;    /* safe viewport */
+  height: 100dvh;    /* dynamic (visible) viewport */
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  background: url("../img/MAZUINO Background.jpg") top center;
+  background-size: cover;
+  background-position: 50% calc(50% + 6dvh);
+
+  /* soften the visual height change on mobile */
+  transition: height .25s ease, background-position .25s ease;
+  will-change: height, background-position;
+}
+#hero .section-container {
+  margin-top: 0;
+  padding-top: 10vh;
+}
+#hero h1 {
+  font-size: 135px;
+  line-height: 98px;
+  color: #c61c38;
+  text-shadow: 0 0 2px black;
+  color: #000;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Divider
+--------------------------------------------------------------*/
+.h-divider {
+  width: 100%;
+  position: relative;
+}
+.h-divider .shadow {
+  overflow: hidden;
+  height: 10px;
+}
+.h-divider .shadow:after {
+  content: '';
+  display: block;
+  margin: -25px -5% 0;
+  width: 110%;
+  height: 25px;
+  border-radius: 125px/12px;
+  box-shadow: 0 0 8px black;
+}
+#social-br {
+    display: none;
+  }
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+.row > * {
+  flex-shrink: 0;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  min-width: 0;
+}
+.col-4, .col-3, .col-6, .col-8 {
+  flex: 0 0 auto;
+}
+.col-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+}
+.col-4 {
+  flex-basis: 33.33333333%;
+  max-width: 33.33333333%;
+}
+.col-5 {
+  flex-basis: 41.66666667%;
+  max-width: 41.66666667%;
+}
+.col-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.col-7 {
+  flex-basis: 58.33333333%;
+  max-width: 58.33333333%;
+}
+.col-8 {
+  flex-basis: 66.66666667%;
+  max-width: 66.66666667%;
+}
+.col-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+}
+.col-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+.ai {
+  overflow: hidden;
+}
+.ai:before {
+  content: "\00a0\00a0\00a0\00a0\00a0";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../img/icons256.png);
+  background-position-x: 0;
+  display: inline-block;
+}
+.ai-about:before {
+  background-position-y: 0%;
+}
+.ai-components:before {
+  background-position-y: 10%;
+}
+.ai-video:before {
+  background-position-y: 20%;
+}
+.ai-code:before {
+  background-position-y: 30%;
+}
+.ai-site:before {
+  background-position-y: 40%;
+}
+.ai-github:before {
+  background-position-y: 50%;
+}
+.ai-instagram:before {
+  background-position-y: 60%;
+}
+.ai-linkedin:before {
+  background-position-y: 70%;
+}
+.ai-stack-overflow:before {
+  background-position-y: 80%;
+}
+.ai-twitter:before {
+  background-position-y: 90%;
+}
+.ai-up:before {
+  background-position-y: 100%;
+}
+
+/*--------------------------------------------------------------
+# Youtube
+--------------------------------------------------------------*/
+.YT {
+  border: 4px solid #c61c38;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+# Responsive Design
+--------------------------------------------------------------*/
+@media (max-width: 1500px) {
+  #hero {
+    background-size: 150% auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  #hero {
+    background-size: 200% auto;
+  }
+}
+
+@media (max-width: 850px) {
+  #hero {
+    background-size: 200% auto;
+  }
+  .section-container .row > div {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .section-container img.section-img {
+    margin: 40px 0 40px 25%;
+    max-width: 50%;
+  }
+  .YT {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  #hero h1 {
+    font-size: 115px;
+  }
+  #hero h2 {
+    font-size: 47px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section-container img.section-img {
+    margin-left: 17.5%;
+    max-width: 65%;
+  }
+  .YT {
+    width: 100%;
+  }
+  #hero h1 {
+    font-size: 93px;
+  }
+  #hero h2 {
+    font-size: 38px;
+  }
+  nav > ul > li {
+    margin: 0 2px;
+  }
+  nav a {
+    padding: 4px 10px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 580px) {
+  section .section-container {
+    padding: 30px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .section-title h2 i {
+    font-size: 34px;
+  }
+  #hero {
+    background-position: 50%;
+  }
+  #hero h1 {
+    font-size: 74px;
+  }
+  #hero h2 {
+    font-size: 30px;
+    margin-top: -5px;
+  }
+  nav > ul > li {
+    margin: 0 10px;
+  }
+  nav a {
+    padding: 4px 15px;
+    font-size: 26px;
+  }
+  #social-br {
+    display: block;
+  }
+  .YT-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 470px) {
+  #hero h1 {
+    font-size: 60px;
+  }
+  #hero h2 {
+    font-size: 24px;
+    margin-top: -10px;
+  }
+  nav a {
+    font-size: 20px;
+  }
+  .section-container img.section-img {
+    margin: 20px 0 30px 12.5%;
+    max-width: 75%;
+  }
+  .YT iframe {
+    height: 160px;
+  }
+  .YT-title {
+    font-size: 15px;
+  }
+}
+
+@media ((orientation: landscape) and (max-width: 767px)) or
+       ((orientation: landscape) and (max-height: 480px)) or
+       ((orientation: landscape) and (hover: none) and (pointer: coarse)) or
+       ((min-aspect-ratio: 1/1))
+{
+  #hero {
+    background-size: 100% auto;
+  }
+  #hero h1, #hero h2 {
+    /*
+    text-stroke: 2px #000;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 14px rgba(189, 189, 192, 0.7);
+    */
+    background: rgba(189, 189, 192, 0.7);
+    padding: 10px 5px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  #hero h2 {
+    margin: 0;
+    border-radius: 0px 0px 5px 5px;
+  }
+}
